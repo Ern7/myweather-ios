@@ -63,7 +63,7 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
                 case .failure(let error):
                     self.hideLoader()
                     DebuggingLogger.printData(error)
-                    let alert = UIAlertController(title: "Error", message: "Something went wrong: \(error.localizedDescription)", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Error", message: "Something went wrong: \(error.message)", preferredStyle: .alert)
 
                     alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { action in
                         self.fetchDailyForecastForArea()

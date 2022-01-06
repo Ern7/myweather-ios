@@ -10,7 +10,7 @@ import Foundation
 class WeatherApiService {
     static let shared = WeatherApiService()
     
-    func load<T>(resource: WebResource<T>, completion: @escaping (Result<T, NetworkError>) -> Void){
+    func load<T>(resource: WebResource<T>, completion: @escaping (Result<T, APICallError>) -> Void){
         
         var request = URLRequest(url: resource.url)
         request.httpMethod = resource.httpMethod.rawValue
@@ -21,7 +21,9 @@ class WeatherApiService {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
-                completion(.failure(.domainError))
+                //completion(.failure(.domainError))
+                //throw APICallError(message: NetworkError.domainError.localizedDescription, kind: .domainError)
+                completion(.failure(APICallError(message: "Domain error", kind: .domainError)))
                 return
             }
             
@@ -32,7 +34,16 @@ class WeatherApiService {
                 }
             }
             else {
-                completion(.failure(.decodingError))
+                
+                let errorResponseResult = try? JSONDecoder().decode(ApiCallErrorResponse.self, from: data)
+                if let errorResponseResult = errorResponseResult {
+                    DispatchQueue.main.async {
+                        completion(.failure(APICallError(message: errorResponseResult.message, kind: .serverError)))
+                    }
+                }
+                else {
+                    completion(.failure(APICallError(message: "Decoding error", kind: .decodingError)))
+                }
             }
         }.resume()
     }

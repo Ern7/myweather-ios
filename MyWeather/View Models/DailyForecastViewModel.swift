@@ -27,7 +27,7 @@ extension DailyForecastListViewModel {
         return DailyForecastViewModel(dailyForecast)
     }
     
-    static func fetch() -> Future<DailyForecastResponse, Error> {
+    static func fetch() -> Future<DailyForecastResponse, APICallError> {
         return Future { promixe in
             WeatherApiService.shared.load(resource: DailyForecastResponse.all) { [self] result in
                 switch result {
