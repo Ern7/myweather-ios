@@ -16,6 +16,9 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
     //UI COMPONENTS
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    private var headerTitleLabel: UILabel?
+    private var headerSubtitleLabel: UILabel?
+    private var headerTemperatureLabel: UILabel?
     
     //VIEWMODELS
     private var dailyForecastVM: DailyForecastViewModel!
@@ -34,8 +37,11 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name:Constants.Font.bold, size:18)!]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name:Constants.Font.bold, size:30)!]
         tableView.delegate = self
         tableView.dataSource = self
+        createHeader()
         fetchDailyForecastForArea()
     }
 
@@ -54,6 +60,7 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
         {
             destination.dailyDataVM = self.dailyDataListVM.dailyDataViewModelAtIndex(selectedIndex)
             destination.day = destination.dailyDataVM.getDay(index: selectedIndex)
+            destination.dailyForecastVM = self.dailyForecastVM
         }   
     }
     
@@ -86,10 +93,44 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
                 self?.hideLoader()
                 self?.dailyForecastVM = DailyForecastViewModel(value)
                 self?.dailyDataListVM.dailyDataListViewModel = value.list.map(DailyDataViewModel.init)
+                self?.adaptHeader()
                 self?.tableView.reloadData()
             }).store(in: &customObservers)
     }
     
+    //MARK: - Header
+    private func createHeader(){
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 150))
+        
+        let margin = 20.0
+        headerTitleLabel = UILabel(frame: CGRect(x: margin, y: 20, width: self.view.bounds.width - (margin * 2), height: 37))
+        headerTitleLabel!.font = UIFont(name:Constants.Font.bold, size:22)
+        headerTitleLabel!.textColor = UIColor.black
+        headerTitleLabel!.textAlignment = .center
+        headerView.addSubview(headerTitleLabel!)
+        
+        //Temperature
+        headerTemperatureLabel = UILabel(frame: CGRect(x: margin, y: headerTitleLabel!.frame.origin.y + headerTitleLabel!.frame.height , width: self.view.bounds.width - (margin * 2), height: 46))
+        headerTemperatureLabel!.font = UIFont(name:Constants.Font.bold, size:40)
+        headerTemperatureLabel!.textColor = UIColor.black
+        headerTemperatureLabel!.textAlignment = .center
+        headerView.addSubview(headerTemperatureLabel!)
+        
+        //Subtitle
+        headerSubtitleLabel = UILabel(frame: CGRect(x: margin, y: headerTemperatureLabel!.frame.origin.y + headerTemperatureLabel!.frame.height , width: self.view.bounds.width - (margin * 2), height: 20))
+        headerSubtitleLabel!.font = UIFont(name:Constants.Font.regular, size:16)
+        headerSubtitleLabel!.textColor = UIColor.black
+        headerSubtitleLabel!.textAlignment = .center
+        headerView.addSubview(headerSubtitleLabel!)
+
+        self.tableView.tableHeaderView = headerView
+    }
+    
+    private func adaptHeader(){
+        self.headerTitleLabel!.text = self.dailyForecastVM.city.name
+        self.headerTemperatureLabel!.text = self.dailyDataListVM.dailyDataViewModelAtIndex(0).displayTemperature
+        self.headerSubtitleLabel!.text = self.dailyDataListVM.dailyDataViewModelAtIndex(0).subtitle
+    }
     
     //MARK: - Activity Indicator methods
     private func showLoader() {

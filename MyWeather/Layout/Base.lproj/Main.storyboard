@@ -7,6 +7,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MyWeather-->
         <scene sceneID="tne-QT-ifu">
@@ -36,23 +44,22 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbj-7v-cMV">
-                                                    <rect key="frame" x="115" y="20" width="299" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="115" y="20" width="259" height="22"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                                    <color key="textColor" red="0.12941176470588234" green="0.14117647058823529" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drm-a0-FJp">
-                                                    <rect key="frame" x="115" y="46" width="259" height="17"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <rect key="frame" x="115" y="47" width="259" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Eqd-pb-jnH" firstAttribute="top" secondItem="2Y6-XT-CNb" secondAttribute="top" constant="5" id="3Ga-nr-up4"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="drm-a0-FJp" secondAttribute="bottom" constant="16" id="8Pv-hU-ANW"/>
-                                                <constraint firstItem="Wbj-7v-cMV" firstAttribute="trailing" secondItem="2Y6-XT-CNb" secondAttribute="trailingMargin" constant="20" id="AGr-ua-QRj"/>
                                                 <constraint firstItem="Wbj-7v-cMV" firstAttribute="leading" secondItem="Eqd-pb-jnH" secondAttribute="trailing" constant="15" id="Ew7-ll-UQh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wbj-7v-cMV" secondAttribute="trailing" constant="20" id="QI3-L1-m9s"/>
                                                 <constraint firstItem="drm-a0-FJp" firstAttribute="top" secondItem="Wbj-7v-cMV" secondAttribute="bottom" constant="5" id="Us0-Ds-V4V"/>
                                                 <constraint firstItem="Eqd-pb-jnH" firstAttribute="leading" secondItem="2Y6-XT-CNb" secondAttribute="leading" constant="20" id="W5y-bC-z39"/>
                                                 <constraint firstItem="Wbj-7v-cMV" firstAttribute="top" secondItem="2Y6-XT-CNb" secondAttribute="top" constant="20" id="ZjN-2Y-Nbv"/>
@@ -72,6 +79,7 @@
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DNs-X0-7UA">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.2784313725" green="0.82745098039999998" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -116,13 +124,13 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rq-7x-aCx">
                                                     <rect key="frame" x="40" y="15.5" width="153" height="19"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrc-7d-y1q">
                                                     <rect key="frame" x="213" y="14.5" width="161" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

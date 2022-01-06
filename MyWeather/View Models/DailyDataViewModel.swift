@@ -99,7 +99,7 @@ extension DailyDataViewModel {
     }
     
     var subtitle: String {
-        return "Max: \(temp.max)°, Min: \(temp.min)°"
+        return "L:\(temp.min)° - H:\(temp.max)°"
     }
     
     func getDay(index: Int) -> String {
@@ -127,7 +127,7 @@ extension DailyDataViewModel {
     }
     
     var weatherAnimationName: String {
-        //using color codes found here: https://www.weatherbit.io/api/codes
+        //using weather codes found here: https://www.weatherbit.io/api/codes
         if weather.count > 0 {
             let weather = weather[0]
             if !weather.icon.isEmpty {
@@ -155,6 +155,25 @@ extension DailyDataViewModel {
             }
         }
         return "82378-sunny-weather"
+    }
+    
+    var displayTemperature: String {
+        let hourOfDay = Calendar.current.component(.hour, from: Date())
+        
+        if hourOfDay < 6 {
+            return "\(temp.night)°"
+        }
+        else if hourOfDay < 12 {
+            return "\(temp.morn)°"
+        }
+        else if hourOfDay < 18 {
+            return "\(temp.day)°"
+        }
+        else if hourOfDay < 24 {
+            return "\(temp.eve)°"
+        }
+        
+        return "\(temp.day)°"
     }
     
 }

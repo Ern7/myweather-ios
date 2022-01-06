@@ -21,5 +21,15 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>Montserrat-Thin.ttf</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

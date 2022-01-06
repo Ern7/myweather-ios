@@ -7,14 +7,17 @@
 
 import Foundation
 import UIKit
+import Lottie
 
 class DailyTemperatureDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //UI COMPONENTS
     @IBOutlet weak var tableView: UITableView!
+    private var animationView: AnimationView?
     
     //VIEWMODEL
     public var dailyDataVM: DailyDataViewModel!
+    public var dailyForecastVM: DailyForecastViewModel!
     
     //DATA
     public var day: String!
@@ -27,6 +30,7 @@ class DailyTemperatureDetailViewController : UIViewController, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name:Constants.Font.bold, size:18)!]
         tableView.delegate = self
         tableView.dataSource = self
         adaptData()
@@ -38,6 +42,48 @@ class DailyTemperatureDetailViewController : UIViewController, UITableViewDelega
     
     private func adaptData(){
         self.title = day
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 280))
+        
+        //Animation
+        let animationViewWidth = 150.0
+        let animationView_x_value = (self.view.bounds.width - animationViewWidth) / 2.0
+        let animationView_y_value = 15.0
+        animationView = .init(name: dailyDataVM.weatherAnimationName)
+        animationView!.frame = CGRect(x: animationView_x_value, y: animationView_y_value, width: animationViewWidth, height: animationViewWidth)
+        animationView!.contentMode = .scaleAspectFit
+        animationView!.loopMode = .loop
+        animationView!.animationSpeed = 0.5
+        animationView!.play()
+        headerView.addSubview(animationView!)
+        
+        //Title
+        let margin = 20.0
+        let titleLabel = UILabel(frame: CGRect(x: margin, y: animationViewWidth + animationView_y_value + margin, width: self.view.bounds.width - (margin * 2), height: 37))
+        titleLabel.font = UIFont(name:Constants.Font.bold, size:22)
+        titleLabel.textColor = UIColor.black
+        titleLabel.text = dailyDataVM.weather[0].main
+        titleLabel.textAlignment = .center
+        headerView.addSubview(titleLabel)
+        
+        //Subtitle
+        let subtitleLabel = UILabel(frame: CGRect(x: margin, y: titleLabel.frame.origin.y + titleLabel.frame.height , width: self.view.bounds.width - (margin * 2), height: 20))
+        subtitleLabel.font = UIFont(name:Constants.Font.regular, size:16)
+        subtitleLabel.textColor = UIColor.black
+        subtitleLabel.text = dailyDataVM.weather[0].weatherDescription
+        subtitleLabel.textAlignment = .center
+        headerView.addSubview(subtitleLabel)
+        
+        //Area
+        let areaLabel = UILabel(frame: CGRect(x: margin, y: subtitleLabel.frame.origin.y + subtitleLabel.frame.height + 3, width: self.view.bounds.width - (margin * 2), height: 20))
+        areaLabel.font = UIFont(name:Constants.Font.medium, size:16)
+        areaLabel.textColor = UIColor.black
+        areaLabel.text = "\(dailyForecastVM.city.name), \(dailyForecastVM.city.country)"
+        areaLabel.textAlignment = .center
+        headerView.addSubview(areaLabel)
+        
+        
+        self.tableView.tableHeaderView = headerView
         
         specList.append(WeatherDataSpec(title: "pressure", value: "\( dailyDataVM.pressure)"))
         specList.append(WeatherDataSpec(title: "humidity", value: "\( dailyDataVM.humidity)"))

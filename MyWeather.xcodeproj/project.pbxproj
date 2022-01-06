@@ -41,6 +41,11 @@
 		0FCBCFCD27874907003F6896 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFCC27874907003F6896 /* clouds.png */; };
 		0FCBCFCF27874B80003F6896 /* WeatherDataSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCFCE27874B80003F6896 /* WeatherDataSpec.swift */; };
 		0FCBCFD127874BD6003F6896 /* WeatherDataSpecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD027874BD6003F6896 /* WeatherDataSpecTableViewCell.swift */; };
+		0FCBCFD82787545B003F6896 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD3278753CF003F6896 /* Montserrat-Bold.ttf */; };
+		0FCBCFD92787545F003F6896 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD4278753CF003F6896 /* Montserrat-Medium.ttf */; };
+		0FCBCFDA27875477003F6896 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD7278753D0003F6896 /* Montserrat-Regular.ttf */; };
+		0FCBCFDB27875479003F6896 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD5278753CF003F6896 /* Montserrat-SemiBold.ttf */; };
+		0FCBCFDC2787547B003F6896 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD6278753D0003F6896 /* Montserrat-Thin.ttf */; };
 		247DC56D7BE185481225B6F6 /* Pods_MyWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94148A72AC9F9899C9065F6A /* Pods_MyWeather.framework */; };
 		BF7BE23AF9C0008108490A33 /* Pods_MyWeather_MyWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D9598061ED53F2C340F80 /* Pods_MyWeather_MyWeatherUITests.framework */; };
 		D0190B0E806F33E28719EA63 /* Pods_MyWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2C8B6F4398D53CB89AB50E /* Pods_MyWeatherTests.framework */; };
@@ -102,6 +107,11 @@
 		0FCBCFCC27874907003F6896 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		0FCBCFCE27874B80003F6896 /* WeatherDataSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSpec.swift; sourceTree = "<group>"; };
 		0FCBCFD027874BD6003F6896 /* WeatherDataSpecTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSpecTableViewCell.swift; sourceTree = "<group>"; };
+		0FCBCFD3278753CF003F6896 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		0FCBCFD4278753CF003F6896 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		0FCBCFD5278753CF003F6896 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		0FCBCFD6278753D0003F6896 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		0FCBCFD7278753D0003F6896 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		36CA395341632F556B8A96B3 /* Pods-MyWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWeatherTests.release.xcconfig"; path = "Target Support Files/Pods-MyWeatherTests/Pods-MyWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		3B2C8B6F4398D53CB89AB50E /* Pods_MyWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692D9598061ED53F2C340F80 /* Pods_MyWeather_MyWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWeather_MyWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +230,7 @@
 		0FCBCF8F2786F512003F6896 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0FCBCFD2278753C4003F6896 /* Fonts */,
 				0FCBCFC9278747BC003F6896 /* Icons */,
 				0FCBCFB127872F68003F6896 /* Animations */,
 				0FCBCF662786F43F003F6896 /* Assets.xcassets */,
@@ -313,6 +324,18 @@
 				0FCBCFCC27874907003F6896 /* clouds.png */,
 			);
 			path = Icons;
+			sourceTree = "<group>";
+		};
+		0FCBCFD2278753C4003F6896 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0FCBCFD3278753CF003F6896 /* Montserrat-Bold.ttf */,
+				0FCBCFD4278753CF003F6896 /* Montserrat-Medium.ttf */,
+				0FCBCFD7278753D0003F6896 /* Montserrat-Regular.ttf */,
+				0FCBCFD5278753CF003F6896 /* Montserrat-SemiBold.ttf */,
+				0FCBCFD6278753D0003F6896 /* Montserrat-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D31E965931BDB7821F6F8354 /* Frameworks */ = {
@@ -447,16 +470,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCBCFDA27875477003F6896 /* Montserrat-Regular.ttf in Resources */,
 				0FCBCFBB27872F79003F6896 /* 82379-thunderstorm.json in Resources */,
+				0FCBCFD92787545F003F6896 /* Montserrat-Medium.ttf in Resources */,
 				0FCBCFC127874060003F6896 /* 22193-partly-cloudy.json in Resources */,
 				0FCBCFC3278744A8003F6896 /* 35779-weather-night-few-clouds.json in Resources */,
 				0FCBCFB727872F79003F6896 /* 82375-cloudy-weather.json in Resources */,
 				0FCBCFBF27873C26003F6896 /* 10790-let-it-snow.json in Resources */,
 				0FCBCF6A2786F43F003F6896 /* LaunchScreen.storyboard in Resources */,
+				0FCBCFD82787545B003F6896 /* Montserrat-Bold.ttf in Resources */,
 				0FCBCFB927872F79003F6896 /* 82377-raining.json in Resources */,
+				0FCBCFDC2787547B003F6896 /* Montserrat-Thin.ttf in Resources */,
 				0FCBCFCB278747C3003F6896 /* cloud.png in Resources */,
 				0FCBCFB827872F79003F6896 /* 82376-twinkling-night.json in Resources */,
 				0FCBCF672786F43F003F6896 /* Assets.xcassets in Resources */,
+				0FCBCFDB27875479003F6896 /* Montserrat-SemiBold.ttf in Resources */,
 				0FCBCF652786F43F003F6896 /* Main.storyboard in Resources */,
 				0FCBCFCD27874907003F6896 /* clouds.png in Resources */,
 				0FCBCFBA27872F79003F6896 /* 82378-sunny-weather.json in Resources */,
@@ -711,7 +739,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -766,7 +794,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -790,6 +818,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -819,6 +848,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

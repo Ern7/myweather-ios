@@ -18,5 +18,14 @@ struct Constants {
     struct ApiKeys {
         static let RapidApiKey = "";
     }
+    
+    struct Font {
+        static let bold = "Montserrat-Bold";
+        static let regular = "Montserrat-Regular";
+        static let medium = "Montserrat-Medium";
+        static let semiBold = "Montserrat-SemiBold";
+        static let thin = "Montserrat-Thin";
+    }
+    
 
 }
