@@ -107,12 +107,54 @@ extension DailyDataViewModel {
         if index == 0 {
             return "Today"
         }
+        else if index == 1 {
+            return "Tomorrow"
+        }
+        else {
+            let today = Date()
+            let requiredDate = Calendar.current.date(byAdding: .day, value: index, to: today)
+            let formatter = DateFormatter()
+            if index < 7 {
+                formatter.dateFormat = "EEEE"
+            }
+            else {
+                formatter.dateFormat = "EEEE dd MMMM"
+            }
+            let day = formatter.string(from: requiredDate!)
+            return day
+        }
         
-        let today = Date()
-        let requiredDate = Calendar.current.date(byAdding: .day, value: index, to: today)
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE"
-        let day = formatter.string(from: requiredDate!)
-        return day
     }
+    
+    var weatherAnimationName: String {
+        //using color codes found here: https://www.weatherbit.io/api/codes
+        if weather.count > 0 {
+            let weather = weather[0]
+            if !weather.icon.isEmpty {
+                if weather.id <= 233 {
+                    return "82379-thunderstorm"
+                }
+                else if weather.id <= 522 {
+                    return "82377-raining"
+                }
+                else if weather.id <= 610  {
+                    return "10790-let-it-snow"
+                }
+                else if weather.id == 800  {
+                    return "82378-sunny-weather"
+                }
+                else if weather.id == 802  {
+                    return "22193-partly-cloudy"
+                }
+                else if weather.id <= 803 {
+                    return "82375-cloudy-weather"
+                }
+                else if weather.id == 900 {
+                    return "82377-raining"
+                }
+            }
+        }
+        return "82378-sunny-weather"
+    }
+    
 }

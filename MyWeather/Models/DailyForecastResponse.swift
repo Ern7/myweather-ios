@@ -20,7 +20,7 @@ extension DailyForecastResponse {
     
     static var all: WebResource<DailyForecastResponse> = {
         
-        guard let url = URL(string: "\(Constants.AppConfig.BackendUrl)forecast/daily?q=johannesburg%2Czaf&lat=35&lon=139&cnt=5&units=metric") else {
+        guard let url = URL(string: "\(Constants.AppConfig.BackendUrl)forecast/daily?q=johannesburg%2Czaf&lat=35&lon=139&cnt=16&units=metric") else {
             fatalError("URL is incorrect!")
         }
         

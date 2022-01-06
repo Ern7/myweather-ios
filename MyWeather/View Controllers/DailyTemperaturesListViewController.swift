@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import Combine
+import Kingfisher
+import Lottie
 
 class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -34,21 +36,25 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
         self.navigationController?.navigationBar.prefersLargeTitles = true
         tableView.delegate = self
         tableView.dataSource = self
+        fetchDailyForecastForArea()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchDailyForecastForArea()
+        
+        //becauase tableview animations if you navigate to detail page then navigate back
+        self.tableView.reloadData()
     }
     
     // MARK: - View controller Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       /* if  segue.identifier == goToDetailPageSegue,
-            let destination = segue.destination as? DetailPageViewController,
+        if  segue.identifier == goToDetailPageSegue,
+            let destination = segue.destination as? DailyTemperatureDetailViewController,
             let selectedIndex = tableView.indexPathForSelectedRow?.row
         {
-            destination.itemVM = self.itemListViewModel.itemViewModel(at: selectedIndex)
-        }   */
+            destination.dailyDataVM = self.dailyDataListVM.dailyDataViewModelAtIndex(selectedIndex)
+            destination.day = destination.dailyDataVM.getDay(index: selectedIndex)
+        }   
     }
     
     // MARK: - Data
@@ -118,6 +124,12 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
         }
         cell.titleLabel?.text = vm.getDay(index: indexPath.row)
         cell.subtitleLabel?.text = vm.subtitle
+        
+        cell.animationView.animation = Animation.named(vm.weatherAnimationName)
+        cell.animationView.contentMode = .scaleAspectFit
+        cell.animationView.loopMode = .loop
+        cell.animationView.animationSpeed = 0.5
+        cell.animationView.play()
         
         return cell
         
