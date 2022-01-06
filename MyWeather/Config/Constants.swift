@@ -16,7 +16,7 @@ struct Constants {
     }
 
     struct ApiKeys {
-        static let RapidApiKey = "42f73a90c0mshecc5fcdb4f1636bp170a48jsnd47328e0ab55";
+        static let RapidApiKey = "";
     }
 
 }
