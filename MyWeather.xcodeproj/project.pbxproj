@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F708E732789C47C00DBEB89 /* cloudy_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F708E722789C47C00DBEB89 /* cloudy_sun.png */; };
+		0F708E752789C85000DBEB89 /* myweather_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F708E742789C85000DBEB89 /* myweather_text.png */; };
 		0FCBCF5E2786F43F003F6896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCF5D2786F43F003F6896 /* AppDelegate.swift */; };
 		0FCBCF602786F43F003F6896 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCF5F2786F43F003F6896 /* SceneDelegate.swift */; };
 		0FCBCF652786F43F003F6896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCF632786F43F003F6896 /* Main.storyboard */; };
@@ -37,8 +39,6 @@
 		0FCBCFBF27873C26003F6896 /* 10790-let-it-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFBE27873C26003F6896 /* 10790-let-it-snow.json */; };
 		0FCBCFC127874060003F6896 /* 22193-partly-cloudy.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFC027874060003F6896 /* 22193-partly-cloudy.json */; };
 		0FCBCFC3278744A8003F6896 /* 35779-weather-night-few-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFC2278744A8003F6896 /* 35779-weather-night-few-clouds.json */; };
-		0FCBCFCB278747C3003F6896 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFCA278747C3003F6896 /* cloud.png */; };
-		0FCBCFCD27874907003F6896 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFCC27874907003F6896 /* clouds.png */; };
 		0FCBCFCF27874B80003F6896 /* WeatherDataSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCFCE27874B80003F6896 /* WeatherDataSpec.swift */; };
 		0FCBCFD127874BD6003F6896 /* WeatherDataSpecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD027874BD6003F6896 /* WeatherDataSpecTableViewCell.swift */; };
 		0FCBCFD82787545B003F6896 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD3278753CF003F6896 /* Montserrat-Bold.ttf */; };
@@ -69,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F708E722789C47C00DBEB89 /* cloudy_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudy_sun.png; sourceTree = "<group>"; };
+		0F708E742789C85000DBEB89 /* myweather_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myweather_text.png; sourceTree = "<group>"; };
 		0FCBCF5A2786F43F003F6896 /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCBCF5D2786F43F003F6896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FCBCF5F2786F43F003F6896 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,8 +105,6 @@
 		0FCBCFBE27873C26003F6896 /* 10790-let-it-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "10790-let-it-snow.json"; sourceTree = "<group>"; };
 		0FCBCFC027874060003F6896 /* 22193-partly-cloudy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "22193-partly-cloudy.json"; sourceTree = "<group>"; };
 		0FCBCFC2278744A8003F6896 /* 35779-weather-night-few-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "35779-weather-night-few-clouds.json"; sourceTree = "<group>"; };
-		0FCBCFCA278747C3003F6896 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
-		0FCBCFCC27874907003F6896 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		0FCBCFCE27874B80003F6896 /* WeatherDataSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSpec.swift; sourceTree = "<group>"; };
 		0FCBCFD027874BD6003F6896 /* WeatherDataSpecTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSpecTableViewCell.swift; sourceTree = "<group>"; };
 		0FCBCFD3278753CF003F6896 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -320,8 +320,8 @@
 		0FCBCFC9278747BC003F6896 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				0FCBCFCA278747C3003F6896 /* cloud.png */,
-				0FCBCFCC27874907003F6896 /* clouds.png */,
+				0F708E722789C47C00DBEB89 /* cloudy_sun.png */,
+				0F708E742789C85000DBEB89 /* myweather_text.png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -477,16 +477,16 @@
 				0FCBCFC3278744A8003F6896 /* 35779-weather-night-few-clouds.json in Resources */,
 				0FCBCFB727872F79003F6896 /* 82375-cloudy-weather.json in Resources */,
 				0FCBCFBF27873C26003F6896 /* 10790-let-it-snow.json in Resources */,
+				0F708E752789C85000DBEB89 /* myweather_text.png in Resources */,
 				0FCBCF6A2786F43F003F6896 /* LaunchScreen.storyboard in Resources */,
 				0FCBCFD82787545B003F6896 /* Montserrat-Bold.ttf in Resources */,
 				0FCBCFB927872F79003F6896 /* 82377-raining.json in Resources */,
+				0F708E732789C47C00DBEB89 /* cloudy_sun.png in Resources */,
 				0FCBCFDC2787547B003F6896 /* Montserrat-Thin.ttf in Resources */,
-				0FCBCFCB278747C3003F6896 /* cloud.png in Resources */,
 				0FCBCFB827872F79003F6896 /* 82376-twinkling-night.json in Resources */,
 				0FCBCF672786F43F003F6896 /* Assets.xcassets in Resources */,
 				0FCBCFDB27875479003F6896 /* Montserrat-SemiBold.ttf in Resources */,
 				0FCBCF652786F43F003F6896 /* Main.storyboard in Resources */,
-				0FCBCFCD27874907003F6896 /* clouds.png in Resources */,
 				0FCBCFBA27872F79003F6896 /* 82378-sunny-weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

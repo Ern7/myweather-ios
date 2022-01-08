@@ -20,6 +20,10 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
     private var headerTitleLabel: UILabel?
     private var headerSubtitleLabel: UILabel?
     private var headerTemperatureLabel: UILabel?
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorDescriptionLabel: UILabel!
+    @IBOutlet weak var errorRefreshButton: UIButton!
+    @IBOutlet weak var errorAnimationView: AnimationView!
     
     //VIEWMODELS
     private var dailyForecastVM: DailyForecastViewModel!
@@ -51,7 +55,13 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
         tableView.delegate = self
         tableView.dataSource = self
         
+        //UI config
         createHeader()
+        errorRefreshButton.titleLabel?.font = UIFont(name:Constants.Font.regular, size:14)
+        errorAnimationView.contentMode = .scaleAspectFit
+        errorAnimationView.loopMode = .loop
+        errorAnimationView.animationSpeed = 0.5
+        hideErrorView()
         
         //User location
         manager.delegate = self
@@ -82,6 +92,7 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
     // MARK: - Data
     private func fetchDailyForecastForArea(){
         guard let userLocation = currentUserLocation else {
+            self.showErrorView(message: "Could not fetch weather forecast because user location could not be retrieved")
             return
         }
         showLoader()
@@ -92,9 +103,9 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
                 case .finished:
                     DebuggingLogger.printData("finished")
                 case .failure(let error):
-                    self.hideLoader()
                     DebuggingLogger.printData(error)
-                    let alert = UIAlertController(title: "Error", message: "Something went wrong: \(error.message)", preferredStyle: .alert)
+                    self.showErrorView(message: error.message)
+                   /* let alert = UIAlertController(title: "Error", message: "Something went wrong: \(error.message)", preferredStyle: .alert)
 
                     alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { action in
                         self.fetchDailyForecastForArea()
@@ -103,7 +114,7 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
                         _ = self.navigationController?.popViewController(animated: true)
                     }))
 
-                    self.present(alert, animated: true)
+                    self.present(alert, animated: true) */
                 }
             }, receiveValue: { [weak self] value in
                 //use weak self coz we dont want to cause a memory leak. We also want to avoid retain cycles
@@ -112,6 +123,7 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
                 self?.dailyForecastVM = DailyForecastViewModel(value)
                 self?.dailyDataListVM.dailyDataListViewModel = value.list.map(DailyDataViewModel.init)
                 self?.adaptHeader()
+                self?.tableView.isHidden = false
                 self?.tableView.reloadData()
             }).store(in: &customObservers)
     }
@@ -153,6 +165,7 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
     //MARK: - Activity Indicator methods
     private func showLoader() {
         DispatchQueue.main.async {
+            self.errorView.isHidden = true
             self.activityIndicatorView.isHidden = false
             self.activityIndicatorView.startAnimating()
         }
@@ -162,6 +175,28 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
         DispatchQueue.main.async {
             self.activityIndicatorView.isHidden = true
             self.activityIndicatorView.stopAnimating()
+        }
+    }
+    
+    //MARK: - Error View
+    @IBAction func refreshForecast(_ sender: Any) {
+        fetchDailyForecastForArea()
+    }
+    
+    private func showErrorView(message: String) {
+        DispatchQueue.main.async {
+            self.tableView.isHidden = true
+            self.errorDescriptionLabel.text = message
+            self.errorView.isHidden = false
+            self.errorAnimationView.play()
+            self.hideLoader()
+        }
+    }
+    
+    private func hideErrorView() {
+        DispatchQueue.main.async {
+            self.errorView.isHidden = true
+            self.errorAnimationView.stop()
         }
     }
     

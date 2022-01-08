@@ -76,6 +76,71 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrj-Pv-zA5">
+                                <rect key="frame" x="0.0" y="200" width="414" height="662"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-xG-5fM" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="147" y="60" width="120" height="120"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="cr4-Ln-pU6"/>
+                                            <constraint firstAttribute="height" constant="120" id="fGn-1H-wG6"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="82377-raining"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzB-84-HML">
+                                        <rect key="frame" x="20" y="200" width="374" height="32"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="26"/>
+                                        <color key="textColor" red="0.2784313725" green="0.82745098039999998" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw2-3x-3wJ">
+                                        <rect key="frame" x="20" y="247" width="374" height="20"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.14117647059999999" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47S-hM-V1u">
+                                        <rect key="frame" x="147" y="287" width="120" height="40"/>
+                                        <color key="backgroundColor" red="0.2784313725" green="0.82745098039999998" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="L2d-Nh-H5E"/>
+                                            <constraint firstAttribute="height" constant="40" id="ibV-1U-CCC"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Refresh"/>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="refreshForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tCO-uu-aiF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="8zE-xG-5fM" firstAttribute="centerX" secondItem="yrj-Pv-zA5" secondAttribute="centerX" id="3fl-Vh-MHW"/>
+                                    <constraint firstItem="47S-hM-V1u" firstAttribute="centerX" secondItem="yrj-Pv-zA5" secondAttribute="centerX" id="C2V-Me-drd"/>
+                                    <constraint firstItem="8zE-xG-5fM" firstAttribute="top" secondItem="yrj-Pv-zA5" secondAttribute="top" constant="60" id="MsG-nD-qIL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pw2-3x-3wJ" secondAttribute="trailing" constant="20" id="aEv-ZC-GTq"/>
+                                    <constraint firstItem="lzB-84-HML" firstAttribute="leading" secondItem="yrj-Pv-zA5" secondAttribute="leading" constant="20" id="ezi-sZ-Cv8"/>
+                                    <constraint firstItem="Pw2-3x-3wJ" firstAttribute="leading" secondItem="yrj-Pv-zA5" secondAttribute="leading" constant="20" id="glb-HS-1WU"/>
+                                    <constraint firstItem="47S-hM-V1u" firstAttribute="top" secondItem="Pw2-3x-3wJ" secondAttribute="bottom" constant="20" id="iZr-re-L74"/>
+                                    <constraint firstItem="Pw2-3x-3wJ" firstAttribute="top" secondItem="lzB-84-HML" secondAttribute="bottom" constant="15" id="jrX-hx-eP0"/>
+                                    <constraint firstAttribute="trailing" secondItem="lzB-84-HML" secondAttribute="trailing" constant="20" id="p0M-uu-S3k"/>
+                                    <constraint firstItem="lzB-84-HML" firstAttribute="top" secondItem="8zE-xG-5fM" secondAttribute="bottom" constant="20" id="vcO-2I-yJB"/>
+                                </constraints>
+                            </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DNs-X0-7UA">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" red="0.2784313725" green="0.82745098039999998" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -86,15 +151,23 @@
                         <constraints>
                             <constraint firstItem="XKl-oZ-fFa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="07g-xe-NLe"/>
                             <constraint firstItem="DNs-X0-7UA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3OH-yC-S62"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yrj-Pv-zA5" secondAttribute="trailing" id="JuL-Mq-9Cn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XKl-oZ-fFa" secondAttribute="bottom" id="QIb-Yz-Ceo"/>
                             <constraint firstItem="DNs-X0-7UA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UCO-5k-zcJ"/>
+                            <constraint firstItem="yrj-Pv-zA5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xdh-g2-8Y7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XKl-oZ-fFa" secondAttribute="trailing" id="kMi-uo-QnM"/>
                             <constraint firstItem="XKl-oZ-fFa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oyG-cs-mAp"/>
+                            <constraint firstItem="yrj-Pv-zA5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="200" id="wGD-S2-MNH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yrj-Pv-zA5" secondAttribute="bottom" id="wVy-6P-iq3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MyWeather" id="K9k-sm-VtI"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="DNs-X0-7UA" id="Sde-s9-3jR"/>
+                        <outlet property="errorAnimationView" destination="8zE-xG-5fM" id="Yfd-bd-jMR"/>
+                        <outlet property="errorDescriptionLabel" destination="Pw2-3x-3wJ" id="tT8-l0-aXE"/>
+                        <outlet property="errorRefreshButton" destination="47S-hM-V1u" id="MiB-Mf-imT"/>
+                        <outlet property="errorView" destination="yrj-Pv-zA5" id="jRP-uB-mDF"/>
                         <outlet property="tableView" destination="XKl-oZ-fFa" id="fSp-Qj-I01"/>
                     </connections>
                 </viewController>
@@ -190,9 +263,6 @@
             <point key="canvasLocation" x="113.04347826086958" y="81.696428571428569"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Eqd-pb-jnH"/>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
