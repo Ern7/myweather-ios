@@ -59,7 +59,8 @@ class DailyTemperatureDetailViewController : UIViewController, UITableViewDelega
         
         //Title
         let margin = 20.0
-        let titleLabel = UILabel(frame: CGRect(x: margin, y: animationViewWidth + animationView_y_value + margin, width: self.view.bounds.width - (margin * 2), height: 37))
+        let topMargin = getTopMarginForTitle(animationName: dailyDataVM.weatherAnimationName)
+        let titleLabel = UILabel(frame: CGRect(x: margin, y: animationViewWidth + animationView_y_value + topMargin, width: self.view.bounds.width - (margin * 2), height: 37))
         titleLabel.font = UIFont(name:Constants.Font.bold, size:22)
         titleLabel.textColor = UIColor.black
         titleLabel.text = dailyDataVM.weather[0].main
@@ -126,5 +127,16 @@ class DailyTemperatureDetailViewController : UIViewController, UITableViewDelega
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    
+    private func getTopMarginForTitle(animationName: String) -> CGFloat {
+        if dailyDataVM.weatherAnimationName == "82377-raining" {
+            return 5.0
+        }
+        else if dailyDataVM.weatherAnimationName == "22193-partly-cloudy" {
+            return -25.0
+        }
+        else if dailyDataVM.weatherAnimationName == "82375-cloudy-weather" {
+            return -30.0
+        }
+        return 0.0
+    }
 }
