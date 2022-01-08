@@ -10,7 +10,14 @@ import Foundation
 class WeatherApiService {
     static let shared = WeatherApiService()
     
+
+    
     func load<T>(resource: WebResource<T>, completion: @escaping (Result<T, APICallError>) -> Void){
+        
+        if !DeviceNetworkMonitor.shared.isDeviceConnectedToInternet {
+            completion(.failure(APICallError(message: "It seems like you don't have a working internet connection.", kind: .internetConnectionError)))
+            return
+        }
         
         var request = URLRequest(url: resource.url)
         request.httpMethod = resource.httpMethod.rawValue
@@ -23,7 +30,7 @@ class WeatherApiService {
             guard let data = data, error == nil else {
                 //completion(.failure(.domainError))
                 //throw APICallError(message: NetworkError.domainError.localizedDescription, kind: .domainError)
-                completion(.failure(APICallError(message: "Domain error", kind: .domainError)))
+                completion(.failure(APICallError(message: "A domain error has occurred. Please make sure your URL is correct.", kind: .domainError)))
                 return
             }
             
@@ -42,7 +49,7 @@ class WeatherApiService {
                     }
                 }
                 else {
-                    completion(.failure(APICallError(message: "Decoding error", kind: .decodingError)))
+                    completion(.failure(APICallError(message: "Failed to decode API call response.", kind: .decodingError)))
                 }
             }
         }.resume()

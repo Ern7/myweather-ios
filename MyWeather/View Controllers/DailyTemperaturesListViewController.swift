@@ -180,11 +180,13 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
     
     //MARK: - Error View
     @IBAction func refreshForecast(_ sender: Any) {
+        self.errorRefreshButton.titleLabel?.font = UIFont(name:Constants.Font.regular, size:14)     //bug fix
         fetchDailyForecastForArea()
     }
     
     private func showErrorView(message: String) {
         DispatchQueue.main.async {
+            self.errorRefreshButton.titleLabel?.font = UIFont(name:Constants.Font.regular, size:14)     //bug fix
             self.tableView.isHidden = true
             self.errorDescriptionLabel.text = message
             self.errorView.isHidden = false

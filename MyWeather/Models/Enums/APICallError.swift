@@ -13,6 +13,7 @@ struct APICallError: Error {
         case domainError
         case urlError
         case serverError
+        case internetConnectionError
     }
 
     let message: String

@@ -97,23 +97,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw2-3x-3wJ">
-                                        <rect key="frame" x="20" y="247" width="374" height="20"/>
+                                        <rect key="frame" x="20" y="242" width="374" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.14117647059999999" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47S-hM-V1u">
-                                        <rect key="frame" x="147" y="287" width="120" height="40"/>
+                                        <rect key="frame" x="137" y="282" width="140" height="40"/>
                                         <color key="backgroundColor" red="0.2784313725" green="0.82745098039999998" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="L2d-Nh-H5E"/>
+                                            <constraint firstAttribute="width" constant="140" id="L2d-Nh-H5E"/>
                                             <constraint firstAttribute="height" constant="40" id="ibV-1U-CCC"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" cornerStyle="fixed">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Refresh"/>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="plain" title="Refresh" cornerStyle="fixed">
+                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
@@ -136,7 +134,7 @@
                                     <constraint firstItem="lzB-84-HML" firstAttribute="leading" secondItem="yrj-Pv-zA5" secondAttribute="leading" constant="20" id="ezi-sZ-Cv8"/>
                                     <constraint firstItem="Pw2-3x-3wJ" firstAttribute="leading" secondItem="yrj-Pv-zA5" secondAttribute="leading" constant="20" id="glb-HS-1WU"/>
                                     <constraint firstItem="47S-hM-V1u" firstAttribute="top" secondItem="Pw2-3x-3wJ" secondAttribute="bottom" constant="20" id="iZr-re-L74"/>
-                                    <constraint firstItem="Pw2-3x-3wJ" firstAttribute="top" secondItem="lzB-84-HML" secondAttribute="bottom" constant="15" id="jrX-hx-eP0"/>
+                                    <constraint firstItem="Pw2-3x-3wJ" firstAttribute="top" secondItem="lzB-84-HML" secondAttribute="bottom" constant="10" id="jrX-hx-eP0"/>
                                     <constraint firstAttribute="trailing" secondItem="lzB-84-HML" secondAttribute="trailing" constant="20" id="p0M-uu-S3k"/>
                                     <constraint firstItem="lzB-84-HML" firstAttribute="top" secondItem="8zE-xG-5fM" secondAttribute="bottom" constant="20" id="vcO-2I-yJB"/>
                                 </constraints>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F708E732789C47C00DBEB89 /* cloudy_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F708E722789C47C00DBEB89 /* cloudy_sun.png */; };
 		0F708E752789C85000DBEB89 /* myweather_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F708E742789C85000DBEB89 /* myweather_text.png */; };
+		0F708E772789D88800DBEB89 /* DeviceNetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F708E762789D88800DBEB89 /* DeviceNetworkMonitor.swift */; };
 		0FCBCF5E2786F43F003F6896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCF5D2786F43F003F6896 /* AppDelegate.swift */; };
 		0FCBCF602786F43F003F6896 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCF5F2786F43F003F6896 /* SceneDelegate.swift */; };
 		0FCBCF652786F43F003F6896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCF632786F43F003F6896 /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		0F708E722789C47C00DBEB89 /* cloudy_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudy_sun.png; sourceTree = "<group>"; };
 		0F708E742789C85000DBEB89 /* myweather_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myweather_text.png; sourceTree = "<group>"; };
+		0F708E762789D88800DBEB89 /* DeviceNetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceNetworkMonitor.swift; sourceTree = "<group>"; };
 		0FCBCF5A2786F43F003F6896 /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCBCF5D2786F43F003F6896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FCBCF5F2786F43F003F6896 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				0FCBCFA92786FF7D003F6896 /* DebuggingLogger.swift */,
+				0F708E762789D88800DBEB89 /* DeviceNetworkMonitor.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				0FCBCFAE27870ADB003F6896 /* DailyDataTableViewCell.swift in Sources */,
 				0FCBCFB027871B04003F6896 /* ApiCallErrorResponse.swift in Sources */,
 				0FCBCFA72786FE91003F6896 /* DailyDataViewModel.swift in Sources */,
+				0F708E772789D88800DBEB89 /* DeviceNetworkMonitor.swift in Sources */,
 				0FCBCF952786F5EA003F6896 /* DailyTemperaturesListViewController.swift in Sources */,
 				0FCBCFD127874BD6003F6896 /* WeatherDataSpecTableViewCell.swift in Sources */,
 				0FCBCF972786F6D4003F6896 /* WeatherApiService.swift in Sources */,
