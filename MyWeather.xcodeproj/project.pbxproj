@@ -15,7 +15,6 @@
 		0FCBCF652786F43F003F6896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCF632786F43F003F6896 /* Main.storyboard */; };
 		0FCBCF672786F43F003F6896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCF662786F43F003F6896 /* Assets.xcassets */; };
 		0FCBCF6A2786F43F003F6896 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCF682786F43F003F6896 /* LaunchScreen.storyboard */; };
-		0FCBCF752786F43F003F6896 /* MyWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCF742786F43F003F6896 /* MyWeatherTests.swift */; };
 		0FCBCF7F2786F43F003F6896 /* MyWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCF7E2786F43F003F6896 /* MyWeatherUITests.swift */; };
 		0FCBCF812786F43F003F6896 /* MyWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCF802786F43F003F6896 /* MyWeatherUITestsLaunchTests.swift */; };
 		0FCBCF952786F5EA003F6896 /* DailyTemperaturesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBCF942786F5EA003F6896 /* DailyTemperaturesListViewController.swift */; };
@@ -47,6 +46,10 @@
 		0FCBCFDA27875477003F6896 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD7278753D0003F6896 /* Montserrat-Regular.ttf */; };
 		0FCBCFDB27875479003F6896 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD5278753CF003F6896 /* Montserrat-SemiBold.ttf */; };
 		0FCBCFDC2787547B003F6896 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCBCFD6278753D0003F6896 /* Montserrat-Thin.ttf */; };
+		0FCBED8B278A1C8000755D40 /* WeatherApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBED8A278A1C8000755D40 /* WeatherApiServiceTests.swift */; };
+		0FCBED8D278A238D00755D40 /* DailyForecastListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBED8C278A238D00755D40 /* DailyForecastListViewModelTests.swift */; };
+		0FCBED8F278A26E300755D40 /* DailyDataListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBED8E278A26E300755D40 /* DailyDataListViewModelTests.swift */; };
+		0FCBED91278A2D3700755D40 /* DailyForecastViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCBED90278A2D3700755D40 /* DailyForecastViewModelTests.swift */; };
 		247DC56D7BE185481225B6F6 /* Pods_MyWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94148A72AC9F9899C9065F6A /* Pods_MyWeather.framework */; };
 		BF7BE23AF9C0008108490A33 /* Pods_MyWeather_MyWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D9598061ED53F2C340F80 /* Pods_MyWeather_MyWeatherUITests.framework */; };
 		D0190B0E806F33E28719EA63 /* Pods_MyWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2C8B6F4398D53CB89AB50E /* Pods_MyWeatherTests.framework */; };
@@ -81,7 +84,6 @@
 		0FCBCF692786F43F003F6896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FCBCF6B2786F43F003F6896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FCBCF702786F43F003F6896 /* MyWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FCBCF742786F43F003F6896 /* MyWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWeatherTests.swift; sourceTree = "<group>"; };
 		0FCBCF7A2786F43F003F6896 /* MyWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCBCF7E2786F43F003F6896 /* MyWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWeatherUITests.swift; sourceTree = "<group>"; };
 		0FCBCF802786F43F003F6896 /* MyWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -114,6 +116,10 @@
 		0FCBCFD5278753CF003F6896 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		0FCBCFD6278753D0003F6896 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		0FCBCFD7278753D0003F6896 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		0FCBED8A278A1C8000755D40 /* WeatherApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiServiceTests.swift; sourceTree = "<group>"; };
+		0FCBED8C278A238D00755D40 /* DailyForecastListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastListViewModelTests.swift; sourceTree = "<group>"; };
+		0FCBED8E278A26E300755D40 /* DailyDataListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDataListViewModelTests.swift; sourceTree = "<group>"; };
+		0FCBED90278A2D3700755D40 /* DailyForecastViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastViewModelTests.swift; sourceTree = "<group>"; };
 		36CA395341632F556B8A96B3 /* Pods-MyWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWeatherTests.release.xcconfig"; path = "Target Support Files/Pods-MyWeatherTests/Pods-MyWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		3B2C8B6F4398D53CB89AB50E /* Pods_MyWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692D9598061ED53F2C340F80 /* Pods_MyWeather_MyWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWeather_MyWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,7 +203,10 @@
 		0FCBCF732786F43F003F6896 /* MyWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				0FCBCF742786F43F003F6896 /* MyWeatherTests.swift */,
+				0FCBED8A278A1C8000755D40 /* WeatherApiServiceTests.swift */,
+				0FCBED8C278A238D00755D40 /* DailyForecastListViewModelTests.swift */,
+				0FCBED8E278A26E300755D40 /* DailyDataListViewModelTests.swift */,
+				0FCBED90278A2D3700755D40 /* DailyForecastViewModelTests.swift */,
 			);
 			path = MyWeatherTests;
 			sourceTree = "<group>";
@@ -644,7 +653,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FCBCF752786F43F003F6896 /* MyWeatherTests.swift in Sources */,
+				0FCBED8F278A26E300755D40 /* DailyDataListViewModelTests.swift in Sources */,
+				0FCBED8B278A1C8000755D40 /* WeatherApiServiceTests.swift in Sources */,
+				0FCBED8D278A238D00755D40 /* DailyForecastListViewModelTests.swift in Sources */,
+				0FCBED91278A2D3700755D40 /* DailyForecastViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,7 +837,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -856,7 +868,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
