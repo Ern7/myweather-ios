@@ -1,5 +1,5 @@
 # MyWeather
-A simple app that displays the weather forecast based on the user's current location. This app uses the Open Weather Map API, so please make sure to get your own API key from https://rapidapi.com/community/api/open-weather-map/ and place it in the `RapidApiKey` property inside the `Constants` file before you run the app.
+A simple app that displays the weather forecast based on the user's current location. This app uses the Open Weather Map API, so please make sure to get your own API key from https://rapidapi.com/community/api/open-weather-map/ and place it in the `RapidApiKey` property inside the `Constants` file before you run the app (or any unit tests).
 
 <img src="https://user-images.githubusercontent.com/41815081/148660961-f0b37485-5d14-4e32-af01-0521e385063a.gif" width="250"> 
 
