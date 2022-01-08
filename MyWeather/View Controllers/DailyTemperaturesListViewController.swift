@@ -10,8 +10,9 @@ import UIKit
 import Combine
 import Kingfisher
 import Lottie
+import CoreLocation
 
-class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     //UI COMPONENTS
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +24,10 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
     //VIEWMODELS
     private var dailyForecastVM: DailyForecastViewModel!
     private var dailyDataListVM = DailyDataListViewModel()
+    
+    //USER LOCATION
+    var manager = CLLocationManager()
+    var currentUserLocation : CLLocation?
     
     //OBSERVERS
     var customObservers: [AnyCancellable] = []
@@ -36,13 +41,23 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
     // MARK: - UIViewController Lifecyle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Navigation Controller
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name:Constants.Font.bold, size:18)!]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name:Constants.Font.bold, size:30)!]
+        
+        //UITableView config
         tableView.delegate = self
         tableView.dataSource = self
+        
         createHeader()
-        fetchDailyForecastForArea()
+        
+        //User location
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -66,8 +81,11 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
     
     // MARK: - Data
     private func fetchDailyForecastForArea(){
+        guard let userLocation = currentUserLocation else {
+            return
+        }
         showLoader()
-        DailyForecastListViewModel.fetch()
+        DailyForecastListViewModel.fetch(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude, daysCount: Constants.AppConfig.ForecastDays)
             .receive(on: DispatchQueue.main)  // The tableView needs to be update on the main thread. So instead of doing DispatchQueue inside the receiveValue method, you can tell Combine to notify us on the main thread with this line
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -181,4 +199,16 @@ class DailyTemperaturesListViewController: UIViewController, UITableViewDelegate
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
+    // MARK: - CLLocationManagerDelegate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        var shouldFetchWeatherData = false;
+        if (currentUserLocation == nil){
+            shouldFetchWeatherData = true;
+        }
+        
+        currentUserLocation = locations[0]
+        if (shouldFetchWeatherData){
+            fetchDailyForecastForArea()
+        }
+    }
 }

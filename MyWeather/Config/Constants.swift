@@ -13,6 +13,7 @@ struct Constants {
         static let BackendUrl = "https://community-open-weather-map.p.rapidapi.com/";
         static let DEBUG_MODE = true;
         static let WeatherIconsBaseURL = "https://openweathermap.org/";
+        static let ForecastDays = 16;
     }
 
     struct ApiKeys {

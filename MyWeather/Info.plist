@@ -31,5 +31,13 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>MyWeather needs your location to fetch weather data in your current location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>MyWeather needs your location to fetch weather data in your current location</string>
+	<key>NSLocationUsageDescription</key>
+	<string>MyWeather needs your location to fetch weather data in your current location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>MyWeather needs your location to fetch weather data in your current location</string>
 </dict>
 </plist>

@@ -18,14 +18,23 @@ struct DailyForecastResponse : Codable {
 
 extension DailyForecastResponse {
     
-    static var all: WebResource<DailyForecastResponse> = {
+    static var getPretoriaForTesting: WebResource<DailyForecastResponse> = {
         
-        guard let url = URL(string: "\(Constants.AppConfig.BackendUrl)forecast/daily?q=johannesburg%2Czaf&lat=35&lon=139&cnt=16&units=metric") else {
+        guard let url = URL(string: "\(Constants.AppConfig.BackendUrl)forecast/daily?q=pretoria%2Czaf&lat=-25.7479&lon=28.2293&cnt=16&units=metric") else {
             fatalError("URL is incorrect!")
         }
         
         return WebResource<DailyForecastResponse>(url: url)
     }()
+    
+    static func getForecast(latitude: Double, longitude: Double, daysCount: Int = 7) -> WebResource<DailyForecastResponse> {
+        
+        guard let url = URL(string: "\(Constants.AppConfig.BackendUrl)forecast/daily?q=johannesburg%2Czaf&lat=\(latitude)&lon=\(longitude)&cnt=\(daysCount)&units=metric") else {
+            fatalError("URL is incorrect!")
+        }
+        
+        return WebResource<DailyForecastResponse>(url: url)
+    }
 }
 
 // MARK: - City
