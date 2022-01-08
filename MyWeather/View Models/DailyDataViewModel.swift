@@ -36,15 +36,24 @@ struct DailyDataViewModel {
 extension DailyDataViewModel {
     
     var dt: Int {
-        return self.dailyData.dt!
+        if let _value = self.dailyData.dt {
+            return _value
+        }
+        return 0
     }
     
     var sunrise: Int {
-        return self.dailyData.sunrise!
+        if let _value = self.dailyData.sunrise {
+            return _value
+        }
+        return 0
     }
     
     var sunset: Int {
-        return self.dailyData.sunset!
+        if let _value = self.dailyData.sunset {
+            return _value
+        }
+        return 0
     }
     
     var temp: Temp {
@@ -55,36 +64,60 @@ extension DailyDataViewModel {
         return self.dailyData.feelsLike
     }
     var pressure: Int {
-        return self.dailyData.pressure!
+        if let _value = self.dailyData.pressure {
+            return _value
+        }
+        return 0
     }
     var humidity: Int {
-        return self.dailyData.humidity!
+        if let _value = self.dailyData.humidity {
+            return _value
+        }
+        return 0
     }
     var weather: [Weather] {
         return self.dailyData.weather
     }
     var speed: Double {
-        return self.dailyData.speed!
+        if let _value = self.dailyData.speed {
+            return _value
+        }
+        return 0.0
     }
     
     var deg: Int {
-        return self.dailyData.deg!
+        if let _value = self.dailyData.deg {
+            return _value
+        }
+        return 0
     }
     
     var gust: Double {
-        return self.dailyData.gust!
+        if let _value = self.dailyData.gust {
+            return _value
+        }
+        return 0.0
     }
     
     var clouds: Int {
-        return self.dailyData.clouds!
+        if let _value = self.dailyData.clouds {
+            return _value
+        }
+        return 0
     }
     
     var pop: Double {
-        return self.dailyData.pop!
+        if let _value = self.dailyData.pop {
+            return _value
+        }
+        return 0.0
     }
     
     var rain: Double {
-        return self.dailyData.rain!
+        if let _value = self.dailyData.rain {
+            return _value
+        }
+        return 0.0
     }
     
     var weatherIconUrl: String {
@@ -99,7 +132,7 @@ extension DailyDataViewModel {
     }
     
     var subtitle: String {
-        return "L:\(temp.min)° - H:\(temp.max)°"
+        return "L: \(Int(temp.min.rounded()))° - H: \(Int(temp.max.rounded()))°"
     }
     
     func getDay(index: Int) -> String {
@@ -161,19 +194,19 @@ extension DailyDataViewModel {
         let hourOfDay = Calendar.current.component(.hour, from: Date())
         
         if hourOfDay < 6 {
-            return "\(temp.night)°"
+            return "\(Int(temp.night.rounded()))°"
         }
         else if hourOfDay < 12 {
-            return "\(temp.morn)°"
+            return "\(Int(temp.morn.rounded()))°"
         }
         else if hourOfDay < 18 {
-            return "\(temp.day)°"
+            return "\(Int(temp.day.rounded()))°"
         }
         else if hourOfDay < 24 {
-            return "\(temp.eve)°"
+            return "\(Int(temp.eve.rounded()))°"
         }
         
-        return "\(temp.day)°"
+        return "\(Int(temp.day.rounded()))°"
     }
     
 }
