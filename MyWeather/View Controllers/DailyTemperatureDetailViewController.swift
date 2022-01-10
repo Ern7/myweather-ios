@@ -85,15 +85,20 @@ class DailyTemperatureDetailViewController : UIViewController, UITableViewDelega
         
         
         self.tableView.tableHeaderView = headerView
+        if day.lowercased() == "today" {
+            specList.append(WeatherDataSpec(title: "Current Temperature", value: "\( dailyDataVM.displayTemperature)"))
+        }
         
-        specList.append(WeatherDataSpec(title: "pressure", value: "\( dailyDataVM.pressure)"))
-        specList.append(WeatherDataSpec(title: "humidity", value: "\( dailyDataVM.humidity)"))
-        specList.append(WeatherDataSpec(title: "speed", value: "\( dailyDataVM.speed)"))
-        specList.append(WeatherDataSpec(title: "deg", value: "\( dailyDataVM.deg)"))
-        specList.append(WeatherDataSpec(title: "gust", value: "\( dailyDataVM.gust)"))
-        specList.append(WeatherDataSpec(title: "clouds", value: "\( dailyDataVM.clouds)"))
-        specList.append(WeatherDataSpec(title: "pop", value: "\( dailyDataVM.pop)"))
-        specList.append(WeatherDataSpec(title: "rain", value: "\( dailyDataVM.rain)"))
+        specList.append(WeatherDataSpec(title: "Max Temperature", value: "\( dailyDataVM.temp.max)°"))
+        specList.append(WeatherDataSpec(title: "Min Temperature", value: "\( dailyDataVM.temp.min)°"))
+        specList.append(WeatherDataSpec(title: "Pressure", value: "\( dailyDataVM.pressure)"))
+        specList.append(WeatherDataSpec(title: "Humidity", value: "\( dailyDataVM.humidity)"))
+        specList.append(WeatherDataSpec(title: "Speed", value: "\( dailyDataVM.speed)"))
+        specList.append(WeatherDataSpec(title: "Deg", value: "\( dailyDataVM.deg)"))
+        specList.append(WeatherDataSpec(title: "Gust", value: "\( dailyDataVM.gust)"))
+        specList.append(WeatherDataSpec(title: "Clouds", value: "\( dailyDataVM.clouds)"))
+        specList.append(WeatherDataSpec(title: "Pop", value: "\( dailyDataVM.pop)"))
+        specList.append(WeatherDataSpec(title: "Rain", value: "\( dailyDataVM.rain)"))
         
         
         self.tableView.reloadData()
